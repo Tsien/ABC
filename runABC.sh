@@ -7,17 +7,18 @@ sudo python ./fixed_text_generate.py
 echo finish training ...
 
 #convert generated ABC notation to midi format file
-abc2midi generated.txt > music.mid
+abc2midi gen_best.txt > music.mid
 
 #plot figures
 ./plot.gp
 
 #rename the new directory here
-dir=../../results/SGD_50
+dir=../../results/test
 mkdir $dir
 
 #moving output files
 mv generated.txt $dir
+mv gen_best.txt $dir
 mv weights.txt $dir
 mv loss.csv $dir
 mv *.mid $dir

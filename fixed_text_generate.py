@@ -83,6 +83,7 @@ testlossHist = []
 trainTime = [0]
 testTime = [0]
 iterHist = list(range(1,max_iter))
+gen_text = []
 for iteration in range(1, max_iter):
     print()
     print('-' * 50)
@@ -109,6 +110,7 @@ for iteration in range(1, max_iter):
     generated = '\n\n\n###iter:' + str(iteration) + '\n'
     sentence = seed
     generated += sentence
+    tmp = sentence
     print('----- Generating with seed: "' + sentence + '"')
     
     for i in range(nn_params['len_gen']):
@@ -121,16 +123,17 @@ for iteration in range(1, max_iter):
         next_char = indices_char[next_index]
     
         generated += next_char
+        tmp += next_char
         sentence = sentence[1:] + next_char
     
     print()
     with open(nn_params['generatefile'], "a") as text_file:
                 text_file.write("{0}".format(generated))
+    gen_text.append(tmp)
 
-#plt.plot(iterHist, lossHist)
-#plt.ylabel('Loss')
-#plt.xlabel('Iterations')
-#plt.savefig('lossPlot.png')
+ind = testlossHist.index(min(testlossHist))
+with open(nn_params['bestfile'], "w") as text_file:
+    text_file.write("{0}".format(gen_text[ind]))
 model.save_weights(nn_params['weightfile'])
 
 trainTime = trainTime[1:]

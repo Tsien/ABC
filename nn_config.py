@@ -5,7 +5,7 @@ def get_neural_net_configuration():
 	nn_params['hidden_dimension_size'] = 1024
 
 	#The type of optimizer
-	nn_params['opt'] = 'SGD'
+	nn_params['opt'] = 'RMSprop'
         #nn_params['opt'] = 'SGD'
 	#nn_params['opt'] = 'Adagrad'
 
@@ -30,6 +30,7 @@ def get_neural_net_configuration():
 	#if you use shell script, do NOT change the following three parameters!
 	#The filename of ouput file
 	nn_params['generatefile'] = 'generated.txt'
+	nn_params['bestfile'] = 'gen_best.txt'
 
 	#The filename of weights file
 	nn_params['weightfile'] = 'weights.txt'
