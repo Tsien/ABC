@@ -5,7 +5,7 @@ def get_neural_net_configuration():
 	nn_params['hidden_dimension_size'] = 1024
 
 	#The type of optimizer
-	nn_params['opt'] = 'RMSprop'
+	nn_params['opt'] = 'SGD'
         #nn_params['opt'] = 'SGD'
 	#nn_params['opt'] = 'Adagrad'
 
@@ -13,7 +13,7 @@ def get_neural_net_configuration():
 	nn_params['len_gen'] = 500
 
 	#Maximum number of iterations for training
-	nn_params['max_iter'] =2 
+	nn_params['max_iter'] = 50 
 
 	# cut the text in semi-redundant sequences of maxlen characters
 	# maxlen is the length of every input sequence
@@ -22,13 +22,10 @@ def get_neural_net_configuration():
 	nn_params['step'] = 3
 
 	#The dataset filename 
-        #Note that the current directory is the directory where the script is
-	nn_params['dataset'] = './datasets/jigs.txt'
-	#nn_params['dataset'] = '../../datasets/jigs.txt'
+	nn_params['dataset'] = '../../datasets/jigs.txt'
 
 	#Seed Sentence filename
-	nn_params['seed'] = './datasets/seedsentence.txt'
-	#nn_params['seed'] = '../../datasets/seedsentence.txt'
+	nn_params['seed'] = '../../datasets/seedsentence.txt'
 
 	#if you use shell script, do NOT change the following three parameters!
 	#The filename of ouput file
