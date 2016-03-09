@@ -22,10 +22,13 @@ def get_neural_net_configuration():
 	nn_params['step'] = 3
 
 	#The dataset filename 
-	nn_params['dataset'] = '../../datasets/jigs.txt'
+        #Note that the current directory is the directory where the script is
+	nn_params['dataset'] = './datasets/jigs.txt'
+	#nn_params['dataset'] = '../../datasets/jigs.txt'
 
 	#Seed Sentence filename
-	nn_params['seed'] = '../../datasets/seedsentence.txt'
+	nn_params['seed'] = './datasets/seedsentence.txt'
+	#nn_params['seed'] = '../../datasets/seedsentence.txt'
 
 	#if you use shell script, do NOT change the following three parameters!
 	#The filename of ouput file

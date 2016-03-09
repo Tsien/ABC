@@ -137,4 +137,4 @@ trainTime = trainTime[1:]
 testTime = testTime[1:]
 with open(nn_params['lossfile'], 'w') as f:
     writer = csv.writer(f, delimiter='\t')
-    writer.writerows(zip(lossHist, trainTime, testlossHist, testTime))
+    writer.writerows(zip(range(1, nn_params['max_iter']), lossHist, trainTime, testlossHist, testTime))
