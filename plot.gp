@@ -42,5 +42,4 @@ set xlabel "Time"
 set ylabel "Training loss"
 
 # set input file here:
-plot "./loss.csv" using 3:2 title 'Training Loss', \
-     "./loss.csv" using 5:4 title 'Testing Loss'
+plot "./loss.csv" using 3:2 title 'Training Loss'

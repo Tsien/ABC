@@ -13,7 +13,7 @@ abc2midi gen_best.txt > music.mid
 ./plot.gp
 
 #rename the new directory here
-dir=../../results/test
+dir=../../results/adagrad_100
 mkdir $dir
 
 #moving output files

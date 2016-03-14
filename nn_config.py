@@ -5,15 +5,16 @@ def get_neural_net_configuration():
 	nn_params['hidden_dimension_size'] = 1024
 
 	#The type of optimizer
-	nn_params['opt'] = 'RMSprop'
+	#nn_params['opt'] = 'RMSprop'
         #nn_params['opt'] = 'SGD'
-	#nn_params['opt'] = 'Adagrad'
+	nn_params['opt'] = 'Adagrad'
+#	nn_params['opt'] = 'Adadelta'
 
 	#The lenth of generated ABC notation
 	nn_params['len_gen'] = 500
 
 	#Maximum number of iterations for training
-	nn_params['max_iter'] = 50 
+	nn_params['max_iter'] = 100 
 
 	# cut the text in semi-redundant sequences of maxlen characters
 	# maxlen is the length of every input sequence
